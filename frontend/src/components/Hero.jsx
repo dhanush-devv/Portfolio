@@ -16,7 +16,7 @@ const Hero = () => {
 
         <div className="hero-buttons">
           <a
-            href="https://github.com/Dhanush18100"
+            href="https://github.com/dhanush-devv"
             target="_blank"
             rel="noopener noreferrer"
             className="hero-button github"
