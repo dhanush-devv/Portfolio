@@ -48,11 +48,3 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolio
   process.exit(1); // Exit if DB fails to connect
 });
 
-// Global error handler
-app.use((err, req, res, next) => {
-  console.error('Global Error:', err);
-  res.status(500).json({
-    message: 'Something went wrong!',
-    error: process.env.NODE_ENV === 'development' ? err.message : 'Internal server error'
-  });
-});
