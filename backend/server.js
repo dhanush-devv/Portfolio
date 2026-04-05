@@ -1,17 +1,17 @@
+require("dotenv").config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const dotenv = require('dotenv');
 const messageRoutes = require('./routes/messageRoutes');
 
-dotenv.config();
+
 
 const app = express();
 
 // Middleware
 app.use(cors({
   origin: [
-    // 'http://localhost:3000',
+    'http://localhost:3000',
     'https://portfolio-frontend-kmoh.onrender.com'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
@@ -20,11 +20,6 @@ app.use(cors({
 
 app.use(express.json());
 
-// Debug logger to verify incoming requests
-app.use((req, res, next) => {
-  console.log(`[${req.method}] ${req.url}`);
-  next();
-});
 
 // Basic root route
 app.get('/', (req, res) => {
