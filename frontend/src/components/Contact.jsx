@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Contact.css';
 
+const BACKEND_URL =  process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000'
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -29,7 +31,7 @@ const Contact = () => {
     setStatus({ submitting: true, submitted: false, error: null });
 
     try {
-      const response = await axios.post("https://portfolio-backend-2pl7.onrender.com/api/messages", formData, {
+      const response = await axios.post(`${BACKEND_URL}/api/messages`, formData, {
         headers: {
           'Content-Type': 'application/json'
         }
