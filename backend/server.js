@@ -13,7 +13,8 @@ app.use(cors({
   origin: [
     'http://localhost:3000',
     'https://portfolio-frontend-kmoh.onrender.com',
-    'https://portfolio-backend-blush-gamma.vercel.app'
+    'https://portfolio-backend-blush-gamma.vercel.app',
+    'https://elogixa-backend.vercel.app'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type']
