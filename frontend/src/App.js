@@ -8,7 +8,6 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
-import ScrollProgress from './components/ScrollProgress';
 import './App.css';
 import './styles/sections.css';
 
@@ -38,7 +37,6 @@ function App() {
 
   return (
     <div className={`app ${darkMode ? 'dark' : ''}`}>
-      <ScrollProgress />
       <AnimatedBackground darkMode={darkMode} />
       <Navbar toggleDarkMode={toggleDarkMode} darkMode={darkMode} onNavClick={scrollToSection} />
       <main className="main-content">
