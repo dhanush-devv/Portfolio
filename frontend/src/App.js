@@ -38,6 +38,7 @@ function App() {
 
   return (
     <div className={`app ${darkMode ? 'dark' : ''}`}>
+      <ScrollProgress />
       <AnimatedBackground darkMode={darkMode} />
       <Navbar toggleDarkMode={toggleDarkMode} darkMode={darkMode} onNavClick={scrollToSection} />
       <main className="main-content">
