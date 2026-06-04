@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import ScrollReveal from './ScrollReveal';
 import './Skills.css';
 
 const skillCategories = [
@@ -9,11 +11,8 @@ const skillCategories = [
       { name: 'Express.js', icon: '<i class="devicon-express-original"></i>' },
       { name: 'React.js', icon: '<i class="devicon-react-original colored"></i>' },
       { name: 'Node.js', icon: '<i class="devicon-nodejs-plain colored"></i>' },
-      
     ],
   },
- 
-  
   {
     title: 'Web Technologies',
     skills: [
@@ -32,59 +31,77 @@ const skillCategories = [
       { name: 'C', icon: '<i class="devicon-c-plain colored"></i>' },
     ],
   },
-    {
-    title:'Frameworks & Databases',
-    skills:[
-        { name: 'Next.js', icon: '<i class="devicon-nextjs-plain"></i>' },
-        { name: 'Firebase', icon: '<i class="devicon-firebase-plain colored"></i>' },
-  { name: 'Supabase', icon: '<i class="devicon-supabase-plain colored"></i>' },
-
-    ]
+  {
+    title: 'Frameworks & Databases',
+    skills: [
+      { name: 'Next.js', icon: '<i class="devicon-nextjs-plain"></i>' },
+      { name: 'Firebase', icon: '<i class="devicon-firebase-plain colored"></i>' },
+      { name: 'Supabase', icon: '<i class="devicon-supabase-plain colored"></i>' },
+    ],
   },
-  
+  {
+    title: 'Data Analytics',
+    skills: [
+      { name: 'Pandas', icon: '<i class="devicon-pandas-original colored"></i>' },
+      { name: 'NumPy', icon: '<i class="devicon-numpy-original colored"></i>' },
+      { name: 'Matplotlib', icon: '<i class="devicon-python-plain colored"></i>' },
+      { name: 'Power BI', icon: '<i class="devicon-azuresqldatabase-plain colored"></i>' },
+      { name: 'Tableau', icon: '<i class="devicon-tableau-plain colored"></i>' },
+    ],
+  },
   {
     title: 'Tools & Software',
     skills: [
       { name: 'VS Code', icon: '<i class="devicon-vscode-plain colored"></i>' },
       { name: 'Figma', icon: '<i class="devicon-figma-plain colored"></i>' },
       { name: 'Excel', icon: '<i class="devicon-microsoftoffice-plain colored"></i>' },
-      { name: 'Power BI', icon: '<i class="devicon-microsoftoffice-plain colored"></i>' },
       { name: 'Git', icon: '<i class="devicon-git-plain colored"></i>' },
       { name: 'GitHub', icon: '<i class="devicon-github-original"></i>' },
       { name: 'ShadCN UI', icon: '<i class="devicon-react-original colored"></i>' },
     ],
   },
- 
 ];
 
-const Skills = () => {
-  React.useEffect(() => {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css';
-    document.head.appendChild(link);
-    return () => {
-      document.head.removeChild(link);
-    };
-  }, []);
+const cardVariants = {
+  hidden: { opacity: 0, y: 32 },
+  show: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
 
+const Skills = () => {
   return (
-    <section id="skills" className="skills-section">
-      <div className="skills-content">
-        <div className="title-wrapper">
-          <h2 className="section-title">Skills</h2>
-        </div>
+    <section id="skills" className="skills-section section-block">
+      <div className="skills-content section-inner">
+        <ScrollReveal>
+          <header className="section-header">
+            <h2 className="section-title">Skills</h2>
+            <p className="section-subtitle">
+              Technologies and tools I use to build modern applications.
+            </p>
+          </header>
+        </ScrollReveal>
 
         <div className="skills-grid">
-          {skillCategories.map((category) => (
-            <div key={category.title} className="skill-card">
+          {skillCategories.map((category, index) => (
+            <motion.div
+              key={category.title}
+              className="skill-card glass-card"
+              custom={index}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.2 }}
+            >
               <div className="skill-header">
                 <h3>{category.title}</h3>
               </div>
               <div className="skill-tags">
                 {category.skills.map((skill) => (
                   <span
-                    key={skill.name}
+                    key={`${category.title}-${skill.name}`}
                     className="skill-tag"
                     dangerouslySetInnerHTML={{
                       __html: `${skill.icon} <span>${skill.name}</span>`,
@@ -92,11 +109,9 @@ const Skills = () => {
                   />
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-
-       
       </div>
     </section>
   );

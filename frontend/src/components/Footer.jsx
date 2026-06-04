@@ -25,8 +25,8 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-title">Dhanush</h3>
           <p className="footer-description">
-            Full Stack Developer specializing in MERN stack development.
-            Creating innovative web solutions with modern technologies.
+            Full Stack Developer specializing in MERN stack and AI-integrated applications.
+            Building modern, scalable web solutions.
           </p>
         </div>
 

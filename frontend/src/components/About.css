@@ -1,90 +1,20 @@
-.about-section {
-  padding: 6rem 2rem;
-  background-color: var(--background-primary);
-}
-
 .about-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centers the content horizontally */
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  background: linear-gradient(45deg, var(--primary-color), var(--primary-dark));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: relative;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(45deg, var(--primary-color), var(--primary-dark));
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 4rem;
-  align-items: start;
-}
-
-.about-image {
-  position: relative;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 10px 20px var(--shadow-color);
-}
-
-.about-image::before {
-  content: '';
-  display: block;
-  padding-top: 100%;
-}
-
-.about-image img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.about-image:hover img {
-  transform: scale(1.05);
-}
-
-.about-text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  max-width: 800px;
-  text-align: center;
-  margin: 0 auto;
-  width: 100%;
 }
 
 .about-card {
-  color: var(--text-secondary);
-  line-height: 1.6;
   width: 100%;
+  max-width: 800px;
+  padding: 2.5rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1.02rem;
 }
 
 .about-card p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .about-card p:last-child {
@@ -92,21 +22,8 @@
 }
 
 @media (max-width: 768px) {
-  .about-section {
-    padding: 4rem 1rem;
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .about-image {
-    max-width: 300px;
-    margin: 0 auto;
+  .about-card {
+    padding: 1.75rem;
+    font-size: 0.975rem;
   }
 }

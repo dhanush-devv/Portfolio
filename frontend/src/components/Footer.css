@@ -1,5 +1,10 @@
 .footer {
-  background-color: var(--background-secondary);
+  position: relative;
+  z-index: 1;
+  background: var(--background-secondary);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-top: 1px solid var(--surface-border);
   color: var(--text-primary);
   padding: 4rem 2rem 2rem;
 }
@@ -76,9 +81,9 @@
 .footer-bottom {
   text-align: center;
   padding-top: 2rem;
-  border-top: 1px solid var(--text-secondary);
-  color: var(--text-secondary);
-  font-size: 0.875rem;
+  border-top: 1px solid var(--surface-border);
+  color: var(--text-muted);
+  font-size: 0.8125rem;
 }
 
 @media (max-width: 768px) {
