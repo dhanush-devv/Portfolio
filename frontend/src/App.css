@@ -1,9 +1,12 @@
+html {
+  scroll-behavior: smooth;
+}
+
 /* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 /* Design tokens */
@@ -14,7 +17,7 @@
   --text-primary: #0f172a;
   --text-secondary: #64748b;
   --text-muted: #94a3b8;
-  --background-primary: rgba(255, 255, 255, 0.78);
+  --background-primary: rgba(255, 255, 255, 0.88);
   --background-secondary: rgba(255, 255, 255, 0.94);
   --surface-border: rgba(148, 163, 184, 0.22);
   --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
@@ -35,7 +38,7 @@
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
-  --background-primary: rgba(15, 23, 42, 0.72);
+  --background-primary: rgba(15, 23, 42, 0.88);
   --background-secondary: rgba(30, 41, 59, 0.88);
   --surface-border: rgba(148, 163, 184, 0.14);
   --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.2);
@@ -97,12 +100,6 @@ section {
 
 .section-surface {
   background: var(--background-primary);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-:root[data-theme='light'] .section-surface {
-  background: rgba(255, 255, 255, 0.5);
 }
 
 .btn-primary {

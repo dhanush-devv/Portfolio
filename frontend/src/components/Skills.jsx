@@ -39,6 +39,7 @@ const skillCategories = [
       { name: 'Supabase', icon: '<i class="devicon-supabase-plain colored"></i>' },
     ],
   },
+  
   {
     title: 'Data Analytics',
     skills: [

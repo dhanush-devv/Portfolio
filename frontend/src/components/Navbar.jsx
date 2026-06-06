@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import './Navbar.css';
 
 const SunIcon = () => (
@@ -30,25 +30,58 @@ const Navbar = ({ toggleDarkMode, darkMode, onNavClick }) => {
     []
   );
 
-  const handleScroll = useCallback(() => {
-    setScrolled(window.scrollY > 16);
-    const sections = navItems.map((item) => document.getElementById(item.id));
-    const scrollPosition = window.scrollY + 100;
-
-    for (let i = sections.length - 1; i >= 0; i--) {
-      const section = sections[i];
-      if (section && section.offsetTop <= scrollPosition) {
-        setActiveSection(navItems[i].id);
-        break;
-      }
-    }
-  }, [navItems]);
-
+  // Optimized scroll handler for 'scrolled' state with requestAnimationFrame
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 16);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [handleScroll]);
+  }, []);
+
+  // IntersectionObserver for active section tracking (zero layout thrashing)
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-30% 0px -60% 0px',
+      threshold: 0,
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    navItems.forEach((item) => {
+      const element = document.getElementById(item.id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      navItems.forEach((item) => {
+        const element = document.getElementById(item.id);
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
+  }, [navItems]);
 
   const handleNavClick = (id) => {
     onNavClick(id);

@@ -8,9 +8,10 @@
 
 .animated-bg__gradient {
   position: absolute;
-  inset: 0;
+  inset: -10%;
   background: var(--bg-gradient);
-  animation: bgShift 18s ease-in-out infinite alternate;
+  animation: bgShift 22s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 .animated-bg__mesh {
@@ -124,10 +125,10 @@
 
 @keyframes bgShift {
   0% {
-    filter: hue-rotate(0deg);
+    transform: rotate(0deg) scale(1);
   }
   100% {
-    filter: hue-rotate(8deg);
+    transform: rotate(4deg) scale(1.06);
   }
 }
 
