@@ -4,6 +4,7 @@ import AnimatedBackground from './components/AnimatedBackground';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
+import Timeline from './components/Timeline';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -48,6 +49,9 @@ function App() {
         </section>
         <section id="skills">
           <Skills />
+        </section>
+        <section id="experience">
+          <Timeline />
         </section>
         <section id="projects">
           <Projects />
