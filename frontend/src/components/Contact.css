@@ -48,8 +48,12 @@
 }
 
 .contact-icon {
-  font-size: 1.25rem;
-  line-height: 1;
+  font-size: 1.15rem;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .contact-item a,
@@ -57,6 +61,7 @@
   color: var(--text-primary);
   font-size: 0.925rem;
   font-weight: 500;
+  word-break: break-all;
 }
 
 .contact-item a:hover {
@@ -179,8 +184,27 @@
   }
 }
 
+/* Autofill overrides to match Dark/Light mode theme */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+  -webkit-text-fill-color: var(--text-primary) !important;
+  -webkit-box-shadow: 0 0 0px 1000px var(--background-primary) inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 @media (max-width: 768px) {
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 1.25rem;
   }
 }

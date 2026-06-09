@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import ScrollReveal from './ScrollReveal';
 import './Contact.css';
 
@@ -93,17 +94,17 @@ const Contact = () => {
 
               <div className="contact-details">
                 <div className="contact-item">
-                  <span className="contact-icon">📧</span>
+                  <span className="contact-icon"><FaEnvelope /></span>
                   <a href="mailto:dhanush.nayak.100@gmail.com">dhanush.nayak.100@gmail.com</a>
                 </div>
 
                 <div className="contact-item">
-                  <span className="contact-icon">📱</span>
+                  <span className="contact-icon"><FaPhoneAlt /></span>
                   <a href="tel:9147755457">+91 9148755457</a>
                 </div>
 
                 <div className="contact-item">
-                  <span className="contact-icon">📍</span>
+                  <span className="contact-icon"><FaMapMarkerAlt /></span>
                   <span>Manipal, India</span>
                 </div>
               </div>
