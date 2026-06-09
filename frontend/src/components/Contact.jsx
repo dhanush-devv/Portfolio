@@ -3,7 +3,7 @@ import axios from 'axios';
 import ScrollReveal from './ScrollReveal';
 import './Contact.css';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
