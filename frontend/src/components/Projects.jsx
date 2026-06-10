@@ -5,7 +5,7 @@ import './Projects.css';
 
 const projects = [
   {
-    title: 'E-commerce+Admin',
+    title: 'E-commerce + Admin Dashboard',
     description:
       'A full-stack eCommerce website built using the MERN stack, featuring user authentication, product management, and a powerful admin dashboard for real-time order and inventory control.',
     image:
