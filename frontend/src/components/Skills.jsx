@@ -27,6 +27,7 @@ const skillCategories = [
     title: 'Programming Languages',
     skills: [
       { name: 'JavaScript', icon: '<i class="devicon-javascript-plain colored"></i>' },
+      { name: 'TypeScript', icon: '<i class="devicon-typescript-plain colored"></i>' },
       { name: 'Java', icon: '<i class="devicon-java-plain colored"></i>' },
       { name: 'C', icon: '<i class="devicon-c-plain colored"></i>' },
     ],
