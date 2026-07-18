@@ -46,6 +46,7 @@ const skillCategories = [
     skills: [
       { name: 'Pandas', icon: '<i class="devicon-pandas-original colored"></i>' },
       { name: 'NumPy', icon: '<i class="devicon-numpy-original colored"></i>' },
+      { name: 'Scikit-learn', icon: '<i class="devicon-scikitlearn-plain colored"></i>' },
       { name: 'Matplotlib', icon: '<i class="devicon-python-plain colored"></i>' },
       { name: 'Power BI', icon: '<i class="devicon-azuresqldatabase-plain colored"></i>' },
       { name: 'Tableau', icon: '<i class="devicon-tableau-plain colored"></i>' },
