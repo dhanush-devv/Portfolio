@@ -33,9 +33,12 @@ const skillCategories = [
     ],
   },
   {
-    title: 'Frameworks & Databases',
+    title: 'Frameworks, Databases & State',
     skills: [
       { name: 'Next.js', icon: '<i class="devicon-nextjs-plain"></i>' },
+      { name: 'Redis', icon: '<i class="devicon-redis-plain colored"></i>' },
+      { name: 'Redux Toolkit', icon: '<i class="devicon-redux-original colored"></i>' },
+      { name: 'Context API', icon: '<i class="devicon-react-original colored"></i>' },
       { name: 'Firebase', icon: '<i class="devicon-firebase-plain colored"></i>' },
       { name: 'Supabase', icon: '<i class="devicon-supabase-plain colored"></i>' },
     ],
