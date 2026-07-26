@@ -56,7 +56,7 @@ const Hero = () => {
           >
             View Projects
           </a>
-          <a href="/Dhanush_Resume.pdf" download className="hero-button hero-button--outline">
+          <a href="/Dhanush_Resume_updated.pdf" download className="hero-button hero-button--outline">
             Download Resume
           </a>
         </motion.div>
