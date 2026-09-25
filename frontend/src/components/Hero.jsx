@@ -29,7 +29,7 @@ const Hero = () => {
       <motion.div className="hero-content" variants={container} initial="hidden" animate="show">
         <motion.div className="hero-badge" variants={item}>
           <span className="hero-badge-dot" />
-          Available for opportunities
+          Building scalable Web & AI apps
         </motion.div>
 
         <motion.h1 className="hero-title" variants={item}>
