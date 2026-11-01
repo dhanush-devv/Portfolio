@@ -35,6 +35,7 @@ const skillCategories = [
   {
     title: 'Frameworks, Databases & State',
     skills: [
+      { name: 'React Native', icon: '<i class="devicon-reactnative-original colored"></i>' },
       { name: 'Next.js', icon: '<i class="devicon-nextjs-plain"></i>' },
       { name: 'Redis', icon: '<i class="devicon-redis-plain colored"></i>' },
       { name: 'Redux Toolkit', icon: '<i class="devicon-redux-original colored"></i>' },
